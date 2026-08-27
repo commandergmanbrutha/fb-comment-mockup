@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Facebook Comment Mockup Generator</title>
+<style>
+  :root{
+    --bg:#F0F2F5; --panel:#FFFFFF; --ink:#050505; --muted:#65676B;
+    --line:#DADDE1; --accent:#1877F2; --accent-ink:#FFFFFF; --good:#1B9E4B;
+    --warn:#B45309; --warnbg:#FEF3C7;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+       font:14px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+  header{background:var(--panel);border-bottom:1px solid var(--line);padding:14px 20px}
+  header h1{margin:0;font-size:18px}
+  header p{margin:4px 0 0;color:var(--muted);font-size:13px}
+  .wrap{display:grid;grid-template-columns:340px 1fr;gap:16px;padding:16px;align-items:start}
+  @media (max-width:900px){.wrap{grid-template-columns:1fr}}
+
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px}
+  .panel.sticky{position:sticky;top:16px;max-height:calc(100vh - 32px);overflow:auto}
+  h2{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);
+     margin:18px 0 8px;font-weight:700}
+  h2:first-child{margin-top:0}
+  label{display:block;font-size:12px;color:var(--muted);margin-bottom:4px}
+  select,input[type=text],input[type=number],input:not([type]),textarea{
+    width:100%;padding:7px 9px;border:1px solid var(--line);border-radius:6px;
+    background:#fff;color:var(--ink);font:inherit;font-size:13px}
+  textarea{resize:vertical;font-size:12px;line-height:1.4}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+  .row{margin-bottom:10px}
+
+  button{font:inherit;font-size:13px;border-radius:6px;border:1px solid var(--line);
+         background:#fff;color:var(--ink);padding:8px 12px;cursor:pointer}
+  button:hover{background:#F2F3F5}
+  button.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);font-weight:600}
+  button.primary:hover{filter:brightness(1.07)}
+  button.wide{width:100%}
+  .btns{display:flex;gap:8px;flex-wrap:wrap}
+
+  .chk{display:flex;align-items:center;gap:6px;color:var(--ink);font-size:13px;margin:0}
+  .tones{display:grid;grid-template-columns:1fr 1fr;gap:4px 10px}
+  .cov{font-size:12px;margin-top:6px;padding:5px 8px;border-radius:5px}
+  .cov.ok{color:var(--good);background:#EAF7EF}
+  .cov.warn{color:var(--warn);background:var(--warnbg)}
+  .hint{font-size:11px;color:var(--muted);margin-top:5px;line-height:1.4}
+
+  #stack{display:flex;flex-direction:column;gap:12px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+  .preview{padding:8px;background:
+      linear-gradient(45deg,#F7F8FA 25%,transparent 25%,transparent 75%,#F7F8FA 75%),
+      linear-gradient(45deg,#F7F8FA 25%,transparent 25%,transparent 75%,#F7F8FA 75%);
+      background-size:16px 16px;background-position:0 0,8px 8px;overflow-x:auto}
+  .preview canvas{display:block;max-width:100%}
+  .editor{border-top:1px solid var(--line);padding:0 12px}
+  .editor summary{cursor:pointer;color:var(--muted);font-size:12px;padding:8px 0;user-select:none}
+  .editor[open] summary{border-bottom:1px solid var(--line);margin-bottom:10px}
+  .erow{margin-bottom:10px}
+  .rxrow{display:flex;gap:5px;flex-wrap:wrap}
+  .rxb{padding:3px;line-height:0;border-radius:50%;border:2px solid transparent;background:none}
+  .rxb img{width:24px;height:24px;display:block;opacity:.4}
+  .rxb.on img{opacity:1}
+  .rxb.on{border-color:var(--accent)}
+  .cardbar{display:flex;gap:6px;padding:8px 12px;border-top:1px solid var(--line);
+           background:#FAFBFC;flex-wrap:wrap}
+  .mini{padding:5px 9px;font-size:12px}
+  .mini.danger{margin-left:auto;color:#C0392B}
+  .toolbar{display:flex;gap:8px;align-items:center;margin-bottom:12px;flex-wrap:wrap}
+  .toolbar .spacer{flex:1}
+  .dupwarn{background:var(--warnbg);border:1px solid #F5C77E;color:#7C4A03;
+           border-radius:8px;padding:10px 12px;margin-bottom:12px;font-size:13px;line-height:1.5}
+  .dupwarn .dupkey{color:#8A5A12;display:block;margin-top:3px;font-size:12px}
+  .card{position:relative}
+  .card.dup{border-color:#E8A33D;box-shadow:0 0 0 2px rgba(232,163,61,.28)}
+  .dupbadge{position:absolute;top:8px;right:8px;z-index:2;background:#E8A33D;color:#3A2600;
+            font-size:11px;font-weight:700;padding:2px 7px;border-radius:20px}
+  .hint code{background:#EDEFF2;padding:1px 4px;border-radius:3px;font-size:11px}
+  #empty{background:var(--panel);border:1px dashed var(--line);border-radius:10px;
+         padding:40px;text-align:center;color:var(--muted)}
+</style>
+</head>
+<body>
+<header>
+  <h1>Facebook Comment Mockup Generator</h1>
+  <p>Pixel-matched to facebook.com — geometry, type scale, colours and reaction icons taken from a live capture.
+     <strong id="poolTotal">0</strong> faces in the pool — none of them are real people.</p>
+</header>
+
+<div class="wrap">
+  <!-- ============================ CONTROLS ============================ -->
+  <div class="panel sticky">
+    <h2>Who's commenting</h2>
+    <div class="row">
+      <label>Gender</label>
+      <select id="fGender">
+        <option value="any">Any</option>
+        <option value="f" selected>Women</option>
+        <option value="m">Men</option>
+      </select>
+    </div>
+    <div class="row grid2">
+      <div>
+        <label>Age</label>
+        <select id="fAge">
+          <option value="any" selected>Any</option>
+          <option value="18-29">18–29</option>
+          <option value="30-44">30–44</option>
+          <option value="45-59">45–59</option>
+          <option value="60+">60+</option>
+        </select>
+      </div>
+      <div>
+        <label>Region</label>
+        <select id="fRegion">
+          <option value="us" selected>United States</option>
+          <option value="uk">United Kingdom</option>
+          <option value="ca">Canada</option>
+          <option value="au">Australia</option>
+          <option value="ie">Ireland</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <label>Heritage (drives face + name style)</label>
+      <select id="fHeritage">
+        <option value="any" selected>Any</option>
+        <option value="white">White</option>
+        <option value="black">Black</option>
+        <option value="hispanic">Hispanic / Latino</option>
+        <option value="eastasian">East / Southeast Asian</option>
+        <option value="southasian">South Asian</option>
+        <option value="mideast">Middle Eastern</option>
+        <option value="mixed">Mixed</option>
+      </select>
+      <div id="coverage" class="cov ok"></div>
+    </div>
+
+    <h2>What they say</h2>
+    <div class="row tones">
+      <label class="chk"><input type="checkbox" class="tone" value="long" checked> Long story</label>
+      <label class="chk"><input type="checkbox" class="tone" value="medium" checked> Medium</label>
+      <label class="chk"><input type="checkbox" class="tone" value="short" checked> Short</label>
+      <label class="chk"><input type="checkbox" class="tone" value="skeptic"> Skeptical</label>
+      <label class="chk"><input type="checkbox" class="tone" value="question"> Question</label>
+      <label class="chk"><input type="checkbox" class="tone" value="tag"> Tagging</label>
+    </div>
+    <div class="row">
+      <label>Your own message pool (overrides the above)</label>
+      <textarea id="customPool" rows="4" placeholder="One comment per block.&#10;&#10;Separate each with a blank line."></textarea>
+      <div class="hint">Blank line between comments. Leave empty to use the built-in pool.</div>
+    </div>
+
+    <h2>Generate</h2>
+    <div class="row grid2">
+      <div><label>How many</label><input id="batchN" type="number" min="1" max="200" value="10"></div>
+      <div style="align-self:end"><button id="btnGenerate" class="primary wide">Generate</button></div>
+    </div>
+    <div class="btns row">
+      <button id="btnAppend">+ Add batch</button>
+      <button id="btnAddOne">+ One</button>
+      <button id="btnReroll">↻ Reroll all</button>
+      <button id="btnClear">Clear</button>
+    </div>
+
+    <h2>Look</h2>
+    <div class="row grid2">
+      <div><label>Comment style</label>
+        <select id="oStyle">
+          <option value="modern" selected>Current Facebook</option>
+          <option value="classic">Classic (grey bubble)</option>
+        </select>
+      </div>
+      <div><label>Theme</label>
+        <select id="oTheme"><option value="light" selected>Light</option><option value="dark">Dark</option></select>
+      </div>
+    </div>
+    <div class="row grid2">
+      <div><label>Footer</label>
+        <select id="oFooter">
+          <option value="text" selected>Like · Reply</option>
+          <option value="thumbs">Thumbs up/down</option>
+        </select>
+      </div>
+      <div><label>Background</label>
+        <select id="oBg">
+          <option value="theme" selected>Match theme</option>
+          <option value="#FFFFFF">White</option>
+          <option value="#F0F2F5">Facebook grey</option>
+          <option value="transparent">Transparent</option>
+        </select>
+      </div>
+    </div>
+    <div class="row grid2">
+      <div><label>Width (px)</label><input id="oWidth" type="number" min="320" max="1400" step="10" value="680"></div>
+      <div><label>Export scale</label>
+        <select id="oScale"><option value="1">1×</option><option value="2" selected>2× (retina)</option><option value="3">3×</option></select>
+      </div>
+    </div>
+    <div class="row grid2">
+      <div><label>Avatar (px)</label><input id="oAvatar" type="number" min="24" max="72" value="40"></div>
+      <div><label>Text size (px)</label><input id="oFont" type="number" min="11" max="24" value="15"></div>
+    </div>
+
+    <h2>Export</h2>
+    <div class="btns row">
+      <button id="btnZipPng" class="primary wide">↓ Download all as ZIP (PNG)</button>
+    </div>
+    <div class="btns row">
+      <button id="btnZipJpg">ZIP (JPG)</button>
+      <button id="btnStackPng">One tall PNG</button>
+      <button id="btnStackJpg">One tall JPG</button>
+    </div>
+    <div class="hint">ZIP gives you one PNG per comment. “One tall” stacks the whole thread into a single image.</div>
+  </div>
+
+  <!-- ============================= OUTPUT ============================= -->
+  <div>
+    <div class="toolbar">
+      <strong><span id="count">0</span> comments</strong>
+      <div class="spacer"></div>
+    </div>
+    <div id="dupWarn" class="dupwarn" style="display:none"></div>
+    <div id="empty" style="display:none">Nothing yet — hit <strong>Generate</strong>.</div>
+    <div id="stack"></div>
+  </div>
+</div>
+
+<script>/*__FACES__*/</script>
+<script>/*__NAMES__*/</script>
+<script>/*__MESSAGES__*/</script>
+<script>/*__REACTIONS__*/</script>
+<script>/*__APP__*/</script>
+</body>
+</html>

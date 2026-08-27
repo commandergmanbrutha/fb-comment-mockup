@@ -1,0 +1,557 @@
+{
+  "_note": "Tags drive the demographic selector. gender: f|m. heritage: white|black|hispanic|eastasian|southasian|mideast|mixed. age: 18-29|30-44|45-59|60+. Add new faces here after dropping them in this folder, then run build.py.",
+  "faces": [
+    {
+      "file": "face-00.jpg",
+      "gender": "f",
+      "heritage": "mixed",
+      "age": "30-44"
+    },
+    {
+      "file": "face-01.jpg",
+      "gender": "f",
+      "heritage": "hispanic",
+      "age": "30-44"
+    },
+    {
+      "file": "face-02.jpg",
+      "gender": "f",
+      "heritage": "white",
+      "age": "30-44"
+    },
+    {
+      "file": "face-03.jpg",
+      "gender": "f",
+      "heritage": "eastasian",
+      "age": "18-29"
+    },
+    {
+      "file": "face-04.jpg",
+      "gender": "f",
+      "heritage": "black",
+      "age": "45-59"
+    },
+    {
+      "file": "face-05.jpg",
+      "gender": "f",
+      "heritage": "white",
+      "age": "18-29"
+    },
+    {
+      "file": "face-06.jpg",
+      "gender": "f",
+      "heritage": "white",
+      "age": "30-44"
+    },
+    {
+      "file": "face-07.jpg",
+      "gender": "f",
+      "heritage": "eastasian",
+      "age": "18-29"
+    },
+    {
+      "file": "face-08.jpg",
+      "gender": "f",
+      "heritage": "white",
+      "age": "18-29"
+    },
+    {
+      "file": "face-09.jpg",
+      "gender": "f",
+      "heritage": "eastasian",
+      "age": "30-44"
+    },
+    {
+      "file": "face-10.jpg",
+      "gender": "f",
+      "heritage": "eastasian",
+      "age": "18-29"
+    },
+    {
+      "file": "face-11.jpg",
+      "gender": "f",
+      "heritage": "white",
+      "age": "18-29"
+    },
+    {
+      "file": "face-12.jpg",
+      "gender": "f",
+      "heritage": "eastasian",
+      "age": "30-44"
+    },
+    {
+      "file": "face-13.jpg",
+      "gender": "f",
+      "heritage": "hispanic",
+      "age": "18-29"
+    },
+    {
+      "file": "face-14.jpg",
+      "gender": "f",
+      "heritage": "hispanic",
+      "age": "18-29"
+    },
+    {
+      "file": "face-15.jpg",
+      "gender": "f",
+      "heritage": "black",
+      "age": "18-29"
+    },
+    {
+      "file": "face-16.jpg",
+      "gender": "f",
+      "heritage": "white",
+      "age": "30-44"
+    },
+    {
+      "file": "face-17.jpg",
+      "gender": "f",
+      "heritage": "white",
+      "age": "18-29"
+    },
+    {
+      "file": "face-18.jpg",
+      "gender": "f",
+      "heritage": "white",
+      "age": "18-29"
+    },
+    {
+      "file": "face-19.jpg",
+      "gender": "f",
+      "heritage": "white",
+      "age": "18-29"
+    },
+    {
+      "file": "face-20.jpg",
+      "gender": "f",
+      "heritage": "white",
+      "age": "30-44"
+    },
+    {
+      "file": "face-21.jpg",
+      "gender": "f",
+      "heritage": "white",
+      "age": "30-44"
+    },
+    {
+      "file": "face-22.jpg",
+      "gender": "f",
+      "heritage": "white",
+      "age": "45-59"
+    },
+    {
+      "file": "face-23.jpg",
+      "gender": "f",
+      "heritage": "white",
+      "age": "30-44"
+    },
+    {
+      "file": "face-24.jpg",
+      "gender": "f",
+      "heritage": "southasian",
+      "age": "30-44"
+    },
+    {
+      "file": "face-25.jpg",
+      "gender": "f",
+      "heritage": "white",
+      "age": "18-29"
+    },
+    {
+      "file": "face-26.jpg",
+      "gender": "f",
+      "heritage": "white",
+      "age": "30-44"
+    },
+    {
+      "file": "face-27.jpg",
+      "gender": "f",
+      "heritage": "eastasian",
+      "age": "18-29"
+    },
+    {
+      "file": "face-28.jpg",
+      "gender": "m",
+      "heritage": "white",
+      "age": "45-59"
+    },
+    {
+      "file": "face-29.jpg",
+      "gender": "f",
+      "heritage": "white",
+      "age": "30-44"
+    },
+    {
+      "file": "face-30.jpg",
+      "gender": "f",
+      "heritage": "white",
+      "age": "30-44"
+    },
+    {
+      "file": "face-31.jpg",
+      "gender": "f",
+      "heritage": "white",
+      "age": "30-44"
+    },
+    {
+      "file": "face-32.jpg",
+      "gender": "m",
+      "heritage": "white",
+      "age": "45-59"
+    },
+    {
+      "file": "face-33.jpg",
+      "gender": "m",
+      "heritage": "mideast",
+      "age": "45-59"
+    },
+    {
+      "file": "face-34.jpg",
+      "gender": "m",
+      "heritage": "white",
+      "age": "18-29"
+    },
+    {
+      "file": "face-35.jpg",
+      "gender": "m",
+      "heritage": "eastasian",
+      "age": "60+"
+    },
+    {
+      "file": "face-36.jpg",
+      "gender": "m",
+      "heritage": "white",
+      "age": "30-44"
+    },
+    {
+      "file": "face-37.jpg",
+      "gender": "m",
+      "heritage": "white",
+      "age": "45-59"
+    },
+    {
+      "file": "face-38.jpg",
+      "gender": "m",
+      "heritage": "white",
+      "age": "18-29"
+    },
+    {
+      "file": "face-39.jpg",
+      "gender": "m",
+      "heritage": "white",
+      "age": "60+"
+    },
+    {
+      "file": "face-40.jpg",
+      "gender": "m",
+      "heritage": "eastasian",
+      "age": "18-29"
+    },
+    {
+      "file": "face-41.jpg",
+      "gender": "m",
+      "heritage": "white",
+      "age": "30-44"
+    },
+    {
+      "file": "face-42.jpg",
+      "gender": "f",
+      "heritage": "hispanic",
+      "age": "45-59"
+    },
+    {
+      "file": "face-43.jpg",
+      "gender": "m",
+      "heritage": "white",
+      "age": "45-59"
+    },
+    {
+      "file": "face-44.jpg",
+      "gender": "m",
+      "heritage": "white",
+      "age": "18-29"
+    },
+    {
+      "file": "face-45.jpg",
+      "gender": "m",
+      "heritage": "white",
+      "age": "30-44"
+    },
+    {
+      "file": "face-46.jpg",
+      "gender": "m",
+      "heritage": "white",
+      "age": "30-44"
+    },
+    {
+      "file": "face-47.jpg",
+      "gender": "m",
+      "heritage": "white",
+      "age": "45-59"
+    },
+    {
+      "file": "face-48.jpg",
+      "gender": "m",
+      "heritage": "white",
+      "age": "60+"
+    },
+    {
+      "file": "face-49.jpg",
+      "gender": "f",
+      "heritage": "white",
+      "age": "45-59"
+    },
+    {
+      "file": "face-50.jpg",
+      "gender": "f",
+      "heritage": "white",
+      "age": "45-59"
+    },
+    {
+      "file": "face-51.jpg",
+      "gender": "f",
+      "heritage": "white",
+      "age": "45-59"
+    },
+    {
+      "file": "face-52.jpg",
+      "gender": "m",
+      "heritage": "white",
+      "age": "60+"
+    },
+    {
+      "file": "face-53.jpg",
+      "gender": "f",
+      "heritage": "white",
+      "age": "45-59"
+    },
+    {
+      "file": "face-54.jpg",
+      "gender": "f",
+      "heritage": "white",
+      "age": "45-59"
+    },
+    {
+      "file": "face-55.jpg",
+      "gender": "f",
+      "heritage": "white",
+      "age": "45-59"
+    },
+    {
+      "file": "face-56.jpg",
+      "gender": "f",
+      "heritage": "white",
+      "age": "45-59"
+    },
+    {
+      "file": "face-57.jpg",
+      "gender": "f",
+      "heritage": "white",
+      "age": "45-59"
+    },
+    {
+      "file": "face-58.jpg",
+      "gender": "f",
+      "heritage": "hispanic",
+      "age": "45-59"
+    },
+    {
+      "file": "face-59.jpg",
+      "gender": "m",
+      "heritage": "white",
+      "age": "45-59"
+    },
+    {
+      "file": "face-60.jpg",
+      "gender": "f",
+      "heritage": "white",
+      "age": "45-59"
+    },
+    {
+      "file": "face-61.jpg",
+      "gender": "m",
+      "heritage": "white",
+      "age": "45-59"
+    },
+    {
+      "file": "face-62.jpg",
+      "gender": "f",
+      "heritage": "white",
+      "age": "45-59"
+    },
+    {
+      "file": "face-63.jpg",
+      "gender": "m",
+      "heritage": "black",
+      "age": "45-59"
+    },
+    {
+      "file": "face-64.jpg",
+      "gender": "f",
+      "heritage": "white",
+      "age": "60+"
+    },
+    {
+      "file": "face-65.jpg",
+      "gender": "f",
+      "heritage": "white",
+      "age": "45-59"
+    },
+    {
+      "file": "face-66.jpg",
+      "gender": "f",
+      "heritage": "white",
+      "age": "60+"
+    },
+    {
+      "file": "face-67.jpg",
+      "gender": "m",
+      "heritage": "white",
+      "age": "45-59"
+    },
+    {
+      "file": "face-68.jpg",
+      "gender": "f",
+      "heritage": "white",
+      "age": "45-59"
+    },
+    {
+      "file": "face-69.jpg",
+      "gender": "m",
+      "heritage": "white",
+      "age": "45-59"
+    },
+    {
+      "file": "face-70.jpg",
+      "gender": "f",
+      "heritage": "white",
+      "age": "45-59"
+    },
+    {
+      "file": "face-71.jpg",
+      "gender": "f",
+      "heritage": "white",
+      "age": "60+"
+    },
+    {
+      "file": "face-72.jpg",
+      "gender": "m",
+      "heritage": "white",
+      "age": "45-59"
+    },
+    {
+      "file": "face-73.jpg",
+      "gender": "f",
+      "heritage": "white",
+      "age": "45-59"
+    },
+    {
+      "file": "face-74.jpg",
+      "gender": "f",
+      "heritage": "white",
+      "age": "45-59"
+    },
+    {
+      "file": "face-75.jpg",
+      "gender": "f",
+      "heritage": "white",
+      "age": "45-59"
+    },
+    {
+      "file": "face-76.jpg",
+      "gender": "f",
+      "heritage": "white",
+      "age": "45-59"
+    },
+    {
+      "file": "face-77.jpg",
+      "gender": "f",
+      "heritage": "white",
+      "age": "45-59"
+    },
+    {
+      "file": "face-78.jpg",
+      "gender": "m",
+      "heritage": "black",
+      "age": "45-59"
+    },
+    {
+      "file": "face-79.jpg",
+      "gender": "f",
+      "heritage": "black",
+      "age": "45-59"
+    },
+    {
+      "file": "face-80.jpg",
+      "gender": "m",
+      "heritage": "white",
+      "age": "60+"
+    },
+    {
+      "file": "face-81.jpg",
+      "gender": "m",
+      "heritage": "white",
+      "age": "60+"
+    },
+    {
+      "file": "face-82.jpg",
+      "gender": "f",
+      "heritage": "white",
+      "age": "45-59"
+    },
+    {
+      "file": "face-83.jpg",
+      "gender": "m",
+      "heritage": "white",
+      "age": "18-29"
+    },
+    {
+      "file": "face-84.jpg",
+      "gender": "m",
+      "heritage": "white",
+      "age": "30-44"
+    },
+    {
+      "file": "face-85.jpg",
+      "gender": "f",
+      "heritage": "eastasian",
+      "age": "60+"
+    },
+    {
+      "file": "face-86.jpg",
+      "gender": "f",
+      "heritage": "white",
+      "age": "45-59"
+    },
+    {
+      "file": "face-87.jpg",
+      "gender": "f",
+      "heritage": "white",
+      "age": "45-59"
+    },
+    {
+      "file": "face-88.jpg",
+      "gender": "m",
+      "heritage": "white",
+      "age": "18-29"
+    },
+    {
+      "file": "face-89.jpg",
+      "gender": "f",
+      "heritage": "eastasian",
+      "age": "45-59"
+    },
+    {
+      "file": "face-90.jpg",
+      "gender": "f",
+      "heritage": "white",
+      "age": "60+"
+    },
+    {
+      "file": "face-91.jpg",
+      "gender": "m",
+      "heritage": "white",
+      "age": "30-44"
+    }
+  ]
+}
